@@ -1,0 +1,40 @@
+Exercise 8
+
+* Reflect the data model shown in schema/addressbook_denormalized.png within database decodemtl_addressbook
+        * Account.id is a primary auto-increment key
+        * AddressBook.id is a primary auto-increment key
+        * Entry.id is a primary auto-increment key
+        * Entry.type is an ENUM column permitting home, work and other
+        * Entry.subtype is an ENUM column permitting phone, address and email
+    
+        
+*** I aldready added ID columns for each table when I created them (Exercise 5) ***
+
+1 ---------------------
+-> The SQL Statement used: 
+mysql> ALTER TABLE Account ADD COLUMN (email VARCHAR(255), password VARCHAR(40), createdOn DATETIME, modifiedOn DATETIME);
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+2 ---------------------
+-> The SQL Statement used: 
+mysql> ALTER TABLE AddressBook ADD COLUMN (accountId INT, name VARCHAR(255), createdOn DATETIME, modifiedOn DATETIME);
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.17 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+3 ---------------------
+-> The SQL Statement used: 
+mysql> ALTER TABLE Entry ADD COLUMN (addressBookId INT, firstName VARCHAR(255), lastName VARCHAR(255), 
+birthday DATETIME, type ENUM ('home', 'work', 'other'), subtype ENUM ('phone', 'address', 'email'), 
+contentLineOne VARCHAR(255), contentLineTwo VARCHAR(255), contentLineThree VARCHAR(255), 
+contentLineFour VARCHAR(255), contentLineFive VARCHAR(255));
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
