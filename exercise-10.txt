@@ -1,0 +1,35 @@
+Exercise 10 (Workshop Challenge)
+
+* Create a data model representing a Hotel with Floors and Rooms 
+* This model should provide answers to the following questions:
+    * The list of Rooms available for rent on a specific date
+    * The list of Rooms which can be occupied by at least 3 people on a specific date
+    * The amount of unrentable Rooms (janitor closets, public laundry room, gym, etc.)
+    * The amount of Rooms having a private Kitchen
+    * The average amount of windows per Floor
+    * The amount of Floors having Rooms with carpets
+    
+mysql> CREATE DATABASE Hotel;
+-> Query OK, 1 row affected (0.00 sec)
+
+mysql> USE Hotel;
+-> Database changed
+
+mysql> CREATE TABLE Rooms (id INT auto_increment primary key, floorId INT, isRentable BOOL, checkIn DATETIME, checkOut DATETIME, 
+privateKitchen BOOL, carpet BOOL, type ENUM ('janitor closet', 'public laundry room', 'gym', 'rentable room'), 
+peoplePerRoom ENUM ('1', '2', '3', '4')); 
+-> Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE Floors (id INT auto_increment primary key, roomId INT, amountOfWindows INT);
+-> Query OK, 0 rows affected (0.06 sec)
+
+mysql> ALTER TABLE Rooms ADD COLUMN (FOREIGN KEY (floorId) REFERENCES Floors(id)); 
+-> Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Floors ADD COLUMN (FOREIGN KEY (roomId) REFERENCES Rooms(id)); 
+-> Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
