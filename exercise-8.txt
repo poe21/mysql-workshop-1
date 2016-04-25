@@ -21,7 +21,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 2 ---------------------
 -> The SQL Statement used: 
-mysql> ALTER TABLE AddressBook ADD COLUMN (accountId INT, name VARCHAR(255), createdOn DATETIME, modifiedOn DATETIME);
+mysql> ALTER TABLE AddressBook ADD COLUMN (FOREIGN KEY (accountId) REFERENCES Account(id), name VARCHAR(255), createdOn DATETIME, modifiedOn DATETIME);
 
 -> The SQL Statement results:
 Query OK, 0 rows affected (0.17 sec)
@@ -30,7 +30,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 3 ---------------------
 -> The SQL Statement used: 
-mysql> ALTER TABLE Entry ADD COLUMN (addressBookId INT, firstName VARCHAR(255), lastName VARCHAR(255), 
+mysql> ALTER TABLE Entry ADD COLUMN (FOREIGN KEY (addressBookId) REFERENCES AddressBook(id), firstName VARCHAR(255), lastName VARCHAR(255), 
 birthday DATETIME, type ENUM ('home', 'work', 'other'), subtype ENUM ('phone', 'address', 'email'), 
 contentLineOne VARCHAR(255), contentLineTwo VARCHAR(255), contentLineThree VARCHAR(255), 
 contentLineFour VARCHAR(255), contentLineFive VARCHAR(255));
@@ -38,3 +38,4 @@ contentLineFour VARCHAR(255), contentLineFive VARCHAR(255));
 -> The SQL Statement results:
 Query OK, 0 rows affected (0.04 sec)
 Records: 0  Duplicates: 0  Warnings: 0
+
