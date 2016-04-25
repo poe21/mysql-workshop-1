@@ -1,0 +1,45 @@
+Exercise 5
+* Create table Account for database decodemtl_addressbook
+
+-> The SQL Statement used: 
+mysql> USE decodemtl_addressbook
+
+-> The SQL Statement results:
+Database changed
+
+
+-> The SQL Statement used: 
+mysql> CREATE TABLE Account (id INT auto_increment primary key);
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.02 sec)
+
+-------------------------------------
+
+* Create table AddressBook for database decodemtl_addressbook
+
+-> The SQL Statement used: 
+mysql> CREATE TABLE AddressBook (id INT auto_increment primary key);
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.02 sec)
+
+-------------------------------------
+
+* Create table Entry for database decodemtl_addressbook
+
+-> The SQL Statement used:
+mysql> CREATE TABLE Entry (id INT auto_increment primary key);
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.02 sec)
+
+-------------------------------------
+
+* Create table Test for database decodemtl_addressbook
+
+-> The SQL Statement used: 
+mysql> CREATE TABLE Test (id INT auto_increment primary key);
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.01 sec)
