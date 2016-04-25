@@ -1,0 +1,9 @@
+Exercise 6
+
+* Remove table Test for database decodemtl_addressbook
+
+-> The SQL Statement used: 
+mysql> DROP TABLE Test;
+
+-> The SQL Statement results:
+Query OK, 0 rows affected (0.01 sec)
