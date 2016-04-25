@@ -1,0 +1,17 @@
+Exercise 2
+* Create a database named decodemtl_test within MySQL:
+
+The SQL Statement used: 
+mysql> CREATE DATABASE decodemtl_test;
+
+The SQL Statement results:
+Query OK, 1 row affected (0.01 sec)
+
+
+* Create a database named decodemtl_addressbook within MySQL
+
+The SQL Statement used: 
+mysql> CREATE DATABASE decodemtl_addressbook;
+
+The SQL Statement results:
+Query OK, 1 row affected (0.00 sec)
