@@ -1,0 +1,16 @@
+Exercise 9
+
+* Create a data model representing a Barn with Chickens
+* This model should provide answers to the following questions:
+    * How many rooster, hen and chicks existed in the Barn on a specific date
+    * How many chicks will come to age on a specific date
+
+
+mysql> CREATE DATABASE Barn;
+-> Query OK, 1 row affected (0.00 sec)
+
+mysql> USE Barn;
+-> Database changed
+
+mysql> CREATE TABLE newAnimal (id INT auto_increment primary key, dateOfBirth DATE, type ENUM ('rooster', 'hen', 'chick'), dateOfDeath DATE);
+-> Query OK, 0 rows affected (0.02 sec)
